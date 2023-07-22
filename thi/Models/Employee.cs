@@ -11,7 +11,8 @@ namespace thi.Models
         [ MinLength(2), MaxLength(150)]
         public string EmployeeName { get; set; }
         [Required]
-        public DateTime EmployeeDOB { get; set; }
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
+        public DateTime? EmployeeDOB { get; set; }
 
         [Required]
         public string EmployeeDepartment { get; set; }

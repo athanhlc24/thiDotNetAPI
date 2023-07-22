@@ -11,6 +11,7 @@ namespace thi.Models
         [MinLength(2), MaxLength(150)]
         public string ProjectName { get; set; }
         [Required]
+     
         public DateTime ProjectStartDate { get; set; }
        
         public DateTime ProjectEndDate { get; set; }
