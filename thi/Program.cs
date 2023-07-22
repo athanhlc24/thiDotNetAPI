@@ -1,3 +1,8 @@
+//using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Authorization;
+using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,7 +11,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+var connectionString = builder.Configuration.GetConnectionString("thiDotNetAPI");
+builder.Services.AddDbContext<thi.Models.DataContext>(
+        options => options.UseSqlServer(connectionString)
+    );
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
