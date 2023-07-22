@@ -6,9 +6,9 @@ namespace thi.Models
     public class Employee
     {
         [Key]
-        [Required]
         public int EmployeeId { get; set; }
         [Required]
+        [ MinLength(2), MaxLength(150)]
         public string EmployeeName { get; set; }
         [Required]
         public DateTime EmployeeDOB { get; set; }

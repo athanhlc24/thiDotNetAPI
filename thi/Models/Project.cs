@@ -8,6 +8,7 @@ namespace thi.Models
         [Key]
         public int ProjectId { get; set; }
         [Required]
+        [MinLength(2), MaxLength(150)]
         public string ProjectName { get; set; }
         [Required]
         public DateTime ProjectStartDate { get; set; }
